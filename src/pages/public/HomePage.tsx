@@ -137,24 +137,18 @@ export default function HomePage() {
                 <h3 className="font-bold text-[#0a1628] text-lg mb-2 line-clamp-2 group-hover:text-[#1769E0] transition-colors">{program.title}</h3>
                 <p className="text-sm text-[#6B7280] mb-4 line-clamp-2">{program.shortDescription}</p>
                 
-                {/* Progress */}
+                {/* Collected Amount */}
                 <div className="mb-4">
-                  <div className="flex justify-between text-sm mb-2">
-                    <span className="font-bold text-[#1769E0]">{formatCurrency(program.collectedAmount)}</span>
-                    <span className="text-[#6B7280]">dari {formatCurrency(program.targetAmount)}</span>
+                  <div className="text-2xl font-bold text-[#1769E0] mb-1">
+                    {formatCurrency(program.collectedAmount)}
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-[#1769E0] to-emerald-500 h-2 rounded-full transition-all"
-                      style={{ width: `${calculateProgress(program.collectedAmount, program.targetAmount)}%` }}
-                    ></div>
+                  <div className="text-xs text-[#6B7280]">
+                    {program.donorCount} donatur
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#6B7280]">
-                    {program.endDate && getRemainingDays(program.endDate) > 0 ? `${getRemainingDays(program.endDate)} hari lagi` : 'Program aktif'}
-                  </span>
+                  <span className="text-xs text-[#6B7280]">Program aktif</span>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#1769E0] group-hover:gap-2 transition-all">
                     Sedekah sekarang <ArrowRight className="w-4 h-4" />
                   </span>

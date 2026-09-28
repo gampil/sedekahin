@@ -150,11 +150,8 @@ class DemoStore {
         coverImage: program.coverImage || '',
         shortDescription: program.shortDescription || '',
         content: program.content || '',
-        targetAmount: program.targetAmount || 0,
         collectedAmount: 0,
         donorCount: 0,
-        startDate: program.startDate || new Date().toISOString().slice(0, 10),
-        endDate: program.endDate || '',
         status: program.status || 'draft',
         featured: program.featured || false,
         createdAt: new Date().toISOString()
