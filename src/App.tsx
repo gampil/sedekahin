@@ -9,6 +9,12 @@ import CampaignDetailPage from './pages/public/CampaignDetailPage';
 import DonationPage from './pages/public/DonationPage';
 import InvoicePage from './pages/public/InvoicePage';
 import GalleryPage from './pages/public/GalleryPage';
+import PaketNasiPage from './pages/public/PaketNasiPage';
+import DonaturPage from './pages/public/DonaturPage';
+import TentangPage from './pages/public/TentangPage';
+import StatusPage from './pages/public/StatusPage';
+import KebijakanPrivasiPage from './pages/public/KebijakanPrivasiPage';
+import SyaratKetentuanPage from './pages/public/SyaratKetentuanPage';
 import AdminLayout from './layouts/AdminLayout';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -34,7 +40,13 @@ export default function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/program" element={<ProgramPage />} />
                 <Route path="/program/:slug" element={<CampaignDetailPage />} />
+                <Route path="/paket-nasi" element={<PaketNasiPage />} />
+                <Route path="/donatur" element={<DonaturPage />} />
                 <Route path="/galeri" element={<GalleryPage />} />
+                <Route path="/tentang" element={<TentangPage />} />
+                <Route path="/status" element={<StatusPage />} />
+                <Route path="/kebijakan-privasi" element={<KebijakanPrivasiPage />} />
+                <Route path="/syarat-ketentuan" element={<SyaratKetentuanPage />} />
               </Route>
               {/* Donation pages (no footer) */}
               <Route path="/donasi" element={<DonationPage />} />

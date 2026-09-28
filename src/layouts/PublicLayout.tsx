@@ -10,7 +10,11 @@ export default function PublicLayout() {
   const navLinks = [
     { path: '/', label: 'Beranda', key: 'home' },
     { path: '/program', label: 'Program', key: 'program' },
+    { path: '/paket-nasi', label: 'Paket Nasi', key: 'paket-nasi' },
+    { path: '/donatur', label: 'Donatur', key: 'donatur' },
     { path: '/galeri', label: 'Galeri', key: 'galeri' },
+    { path: '/tentang', label: 'Tentang', key: 'tentang' },
+    { path: '/status', label: 'Cek donasi', key: 'status' },
   ];
 
   const currentKey = location.pathname === '/' ? 'home' : location.pathname.split('/')[1] || 'home';
@@ -113,12 +117,18 @@ export default function PublicLayout() {
             <div className="footer-title">Jelajahi</div>
             <div className="footer-links">
               <Link to="/program">Semua program</Link>
+              <Link to="/paket-nasi">Paket nasi</Link>
+              <Link to="/donatur">Doa donatur</Link>
               <Link to="/galeri">Galeri</Link>
+              <Link to="/status">Cek donasi</Link>
             </div>
           </div>
           <div>
             <div className="footer-title">Informasi</div>
             <div className="footer-links">
+              <Link to="/tentang">Tentang kami</Link>
+              <Link to="/kebijakan-privasi">Kebijakan privasi</Link>
+              <Link to="/syarat-ketentuan">Syarat & ketentuan</Link>
               <Link to="/admin/login">Panel admin</Link>
             </div>
           </div>
