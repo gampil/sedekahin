@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useData } from '../contexts/DataProvider';
-import { Heart, Menu, X } from 'lucide-react';
+import { Shield, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PublicLayout() {
@@ -15,16 +15,20 @@ export default function PublicLayout() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="min-h-screen flex flex-col bg-[#fafafa]">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="bg-white shadow-sm sticky top-0 z-50 border-b">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#1769E0] rounded-lg flex items-center justify-center">
-                <Heart className="w-4 h-4 text-white fill-white" />
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-gradient-to-br from-[#1769E0] to-emerald-500 rounded-xl flex items-center justify-center shadow-sm">
+                <Shield className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-[#172033]">{settings.siteName}</span>
+              <div className="hidden sm:block">
+                <span className="text-base font-extrabold text-[#0a1628] block leading-tight">SEDEKAH SUBUH</span>
+                <span className="text-xs font-semibold text-[#1769E0] leading-tight">HARAMAIN</span>
+              </div>
+              <span className="sm:hidden text-base font-extrabold text-[#0a1628]">SSH</span>
             </Link>
             
             {/* Desktop Nav */}
@@ -34,7 +38,7 @@ export default function PublicLayout() {
                   key={link.path}
                   to={link.path}
                   className={`text-sm font-medium transition-colors ${
-                    location.pathname === link.path ? 'text-[#1769E0]' : 'text-[#6B7280] hover:text-[#172033]'
+                    location.pathname === link.path ? 'text-[#1769E0]' : 'text-[#6B7280] hover:text-[#0a1628]'
                   }`}
                 >
                   {link.label}
@@ -42,7 +46,7 @@ export default function PublicLayout() {
               ))}
               <Link
                 to="/program"
-                className="bg-[#1769E0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1057BE] transition-colors"
+                className="bg-[#1769E0] text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-[#1057BE] transition-colors shadow-sm"
               >
                 Sedekah Sekarang
               </Link>
@@ -76,7 +80,7 @@ export default function PublicLayout() {
             <Link
               to="/program"
               onClick={() => setMobileMenuOpen(false)}
-              className="block mt-3 bg-[#1769E0] text-white px-5 py-3 rounded-lg text-sm font-semibold text-center"
+              className="block mt-3 bg-[#1769E0] text-white px-5 py-3 rounded-xl text-sm font-bold text-center"
             >
               Sedekah Sekarang
             </Link>
@@ -90,20 +94,23 @@ export default function PublicLayout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#172033] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <footer className="bg-[#0a1628] text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-[#1769E0] rounded-lg flex items-center justify-center">
-                  <Heart className="w-4 h-4 text-white fill-white" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#1769E0] to-emerald-500 rounded-xl flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-lg font-bold">{settings.siteName}</span>
+                <div>
+                  <span className="text-sm font-extrabold block leading-tight">SEDEKAH SUBUH</span>
+                  <span className="text-xs font-semibold text-[#1769E0] leading-tight">HARAMAIN</span>
+                </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">{settings.siteDescription}</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Navigasi</h4>
+              <h4 className="font-bold mb-4">Navigasi</h4>
               <div className="flex flex-col gap-2">
                 {navLinks.map(link => (
                   <Link key={link.path} to={link.path} className="text-gray-400 text-sm hover:text-white transition-colors">
@@ -113,7 +120,7 @@ export default function PublicLayout() {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Kontak</h4>
+              <h4 className="font-bold mb-4">Kontak</h4>
               <div className="flex flex-col gap-2 text-sm text-gray-400">
                 <p>{settings.email}</p>
                 <p>{settings.whatsapp}</p>
@@ -121,8 +128,8 @@ export default function PublicLayout() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
-            © 2024 {settings.siteName}. Semua hak dilindungi.
+          <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-500">
+            © 2024 Sedekah Subuh Haramain. Sedekah Online Aman & Transparan.
           </div>
         </div>
       </footer>

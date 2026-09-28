@@ -83,7 +83,7 @@ export default function InvoicePage() {
           <Link to="/" className="text-[#6B7280] hover:text-[#172033]">
             <ArrowLeft className="w-5 h-5" />
           </Link>
-          <h1 className="text-lg font-bold text-[#172033]">Invoice Donasi</h1>
+          <h1 className="text-lg font-bold text-[#0a1628]">Invoice Sedekah</h1>
         </div>
 
         {/* Status Card */}
@@ -111,7 +111,7 @@ export default function InvoicePage() {
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-[#6B7280]">Donatur</span>
-              <span className="font-medium text-[#172033]">{donation.anonymous ? 'Orang Baik' : `${donation.salutation} ${donation.name}`}</span>
+              <span className="font-medium text-[#172033]">{donation.anonymous ? 'Hamba Allah' : `${donation.salutation} ${donation.name}`}</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-[#6B7280]">Tanggal</span>

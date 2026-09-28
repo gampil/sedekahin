@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useData } from '../contexts/DataProvider';
 import { useState } from 'react';
-import { LayoutDashboard, FolderOpen, Package, Landmark, Heart, Newspaper, Image, MessageSquare, Settings, LogOut, Menu, X, ExternalLink } from 'lucide-react';
+import { LayoutDashboard, FolderOpen, Package, Landmark, Shield, Newspaper, Image, MessageSquare, Settings, LogOut, Menu, X, ExternalLink } from 'lucide-react';
 
 export default function AdminLayout() {
   const { isAdmin, loading, logout } = useAuth();
@@ -28,7 +28,7 @@ export default function AdminLayout() {
   const menuItems = [
     { path: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
     { path: '/admin/programs', icon: FolderOpen, label: 'Campaign' },
-    { path: '/admin/donations', icon: Heart, label: 'Donasi' },
+    { path: '/admin/donations', icon: Shield, label: 'Donasi' },
     { path: '/admin/packages', icon: Package, label: 'Paket Donasi' },
     { path: '/admin/banks', icon: Landmark, label: 'Rekening Bank' },
     { path: '/admin/updates', icon: Newspaper, label: 'Kabar Terbaru' },
@@ -41,11 +41,14 @@ export default function AdminLayout() {
     <div className={`flex flex-col h-full bg-[#172033] ${mobile ? '' : 'w-64'}`}>
       <div className="p-4 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#1769E0] rounded-lg flex items-center justify-center">
-            <Heart className="w-4 h-4 text-white fill-white" />
+          <div className="w-8 h-8 bg-gradient-to-br from-[#1769E0] to-emerald-500 rounded-lg flex items-center justify-center">
+            <Shield className="w-4 h-4 text-white" />
           </div>
-          <span className="text-white font-bold">{settings.siteName}</span>
-          <span className="text-xs text-gray-400 ml-1">Admin</span>
+          <div>
+            <span className="text-white font-bold text-sm block leading-tight">SEDEKAH SUBUH</span>
+            <span className="text-xs text-[#1769E0] font-semibold leading-tight">HARAMAIN</span>
+          </div>
+          <span className="text-xs text-gray-400 ml-auto">Admin</span>
         </div>
       </div>
       <nav className="flex-1 p-3 overflow-y-auto">
