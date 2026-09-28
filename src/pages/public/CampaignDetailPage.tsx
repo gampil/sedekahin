@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useData } from '../../contexts/DataProvider';
 import { formatCurrency, formatDate, formatRelativeTime, calculateProgress, getRemainingDays, sanitizeHtml } from '../../utils/helpers';
-import { Heart, ArrowRight, Shield, Calendar, Users } from 'lucide-react';
+import { Heart, Shield, Calendar, Users } from 'lucide-react';
 import { useState } from 'react';
 
 export default function CampaignDetailPage() {

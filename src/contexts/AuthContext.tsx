@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User, getIdToken } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User, getIdToken as firebaseGetIdToken } from 'firebase/auth';
 import { ref, get } from 'firebase/database';
 import { auth, database, DEMO_MODE } from '../config/firebase';
 
@@ -78,7 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const getToken = async (): Promise<string | null> => {
     if (user) {
-      return getIdToken(user);
+      return firebaseGetIdToken(user);
     }
     return null;
   };

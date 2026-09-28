@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import { ref, onValue, set, push, update, runTransaction, get, query, orderByChild, equalTo } from 'firebase/database';
+import { ref, onValue, set, push, update, runTransaction } from 'firebase/database';
 import { database, DEMO_MODE } from '../config/firebase';
 import { Program, Package, Bank, Donation, Update, GalleryItem, Testimonial, Settings } from '../types';
 import { mockPrograms, mockPackages, mockBanks, mockDonations, mockUpdates, mockGallery, mockTestimonials, mockSettings } from '../data/mockData';
