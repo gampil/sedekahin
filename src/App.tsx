@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { DataProvider } from './contexts/DataProvider';
 import { AuthProvider } from './contexts/AuthContext';
 import { ToastProvider } from './components/Toast';
@@ -24,7 +24,7 @@ import AdminSettings from './pages/admin/AdminSettings';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DataProvider>
         <AuthProvider>
           <ToastProvider>
@@ -58,6 +58,6 @@ export default function App() {
           </ToastProvider>
         </AuthProvider>
       </DataProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
