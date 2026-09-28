@@ -19,9 +19,6 @@ export default function AdminProgramForm() {
   const [thumbnail, setThumbnail] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [content, setContent] = useState('');
-  const [targetAmount, setTargetAmount] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
   const [status, setStatus] = useState<'active' | 'archived' | 'draft'>('draft');
   const [featured, setFeatured] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -33,9 +30,6 @@ export default function AdminProgramForm() {
       setThumbnail(existing.thumbnail);
       setShortDescription(existing.shortDescription);
       setContent(existing.content);
-      setTargetAmount(existing.targetAmount.toString());
-      setStartDate(existing.startDate);
-      setEndDate(existing.endDate);
       setStatus(existing.status);
       setFeatured(existing.featured);
     }
@@ -60,9 +54,6 @@ export default function AdminProgramForm() {
         coverImage: thumbnail,
         shortDescription,
         content,
-        targetAmount: parseInt(targetAmount) || 0,
-        startDate,
-        endDate,
         status,
         featured
       });
@@ -109,20 +100,7 @@ export default function AdminProgramForm() {
           <label className="block text-sm font-medium text-[#172033] mb-1.5">Konten (HTML)</label>
           <textarea value={content} onChange={e => setContent(e.target.value)} rows={8} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1769E0] font-mono text-sm" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-[#172033] mb-1.5">Target Dana</label>
-            <input type="number" value={targetAmount} onChange={e => setTargetAmount(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1769E0]" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-[#172033] mb-1.5">Tanggal Mulai</label>
-            <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1769E0]" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-[#172033] mb-1.5">Tanggal Selesai</label>
-            <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#1769E0]" />
-          </div>
-        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-[#172033] mb-1.5">Status</label>

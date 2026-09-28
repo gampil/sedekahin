@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import { useData } from '../../contexts/DataProvider';
 import { useToast } from '../../components/Toast';
-import { formatCurrency, generateUUID, generateInvoice, validateEmail } from '../../utils/helpers';
+import { formatCurrency, generateUUID, generateInvoice } from '../../utils/helpers';
 import { Heart, ArrowLeft, Loader2 } from 'lucide-react';
 
 export default function DonationPage() {
@@ -26,7 +26,6 @@ export default function DonationPage() {
   const [email, setEmail] = useState('');
   const [prayer, setPrayer] = useState('');
   const [agreed, setAgreed] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
