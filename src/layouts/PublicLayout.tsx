@@ -1,6 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useData } from '../contexts/DataProvider';
-import { Shield, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PublicLayout() {
@@ -9,128 +8,131 @@ export default function PublicLayout() {
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Beranda' },
-    { path: '/program', label: 'Program' },
-    { path: '/galeri', label: 'Galeri' },
+    { path: '/', label: 'Beranda', key: 'home' },
+    { path: '/program', label: 'Program', key: 'program' },
+    { path: '/galeri', label: 'Galeri', key: 'galeri' },
   ];
 
-  return (
-    <div className="min-h-screen flex flex-col bg-[#fafafa]">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50 border-b">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-[#1769E0] to-emerald-500 rounded-xl flex items-center justify-center shadow-sm">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-base font-extrabold text-[#0a1628] block leading-tight">SEDEKAH SUBUH</span>
-                <span className="text-xs font-semibold text-[#1769E0] leading-tight">HARAMAIN</span>
-              </div>
-              <span className="sm:hidden text-base font-extrabold text-[#0a1628]">SSH</span>
-            </Link>
-            
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map(link => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-colors ${
-                    location.pathname === link.path ? 'text-[#1769E0]' : 'text-[#6B7280] hover:text-[#0a1628]'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                to="/program"
-                className="bg-[#1769E0] text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-[#1057BE] transition-colors shadow-sm"
-              >
-                Sedekah Sekarang
-              </Link>
-            </nav>
+  const currentKey = location.pathname === '/' ? 'home' : location.pathname.split('/')[1] || 'home';
 
-            {/* Mobile menu button */}
+  return (
+    <div className="min-h-screen flex flex-col bg-[#f8fafc]">
+      {/* Header */}
+      <header className="site-header">
+        <div className="container-shell nav-wrap">
+          <Link to="/" className="brand" aria-label={`${settings.siteName} Beranda`}>
+            <span className="brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/>
+              </svg>
+            </span>
+            <span className="brand-copy">
+              <span className="brand-copy-text">{settings.siteName}</span>
+              <small>Sedekah Online</small>
+            </span>
+          </Link>
+
+          <nav className="nav-links" aria-label="Navigasi utama">
+            {navLinks.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="nav-link"
+                aria-current={currentKey === link.key ? 'page' : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="nav-actions">
+            <Link to="/program" className="btn btn-primary">
+              Mulai sedekah
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-[#6B7280]"
+              className="mobile-menu-button"
+              aria-label={mobileMenuOpen ? "Tutup menu" : "Buka menu"}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <svg className="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {mobileMenuOpen ? <path d="m18 6-12 12M6 6l12 12"/> : <path d="M4 6h16M4 12h16M4 18h16"/>}
+              </svg>
             </button>
           </div>
         </div>
 
-        {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t bg-white px-4 py-4">
+          <nav className="mobile-menu open" aria-label="Navigasi seluler">
             {navLinks.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block py-3 text-sm font-medium ${
-                  location.pathname === link.path ? 'text-[#1769E0]' : 'text-[#6B7280]'
-                }`}
+                className="nav-link"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/program"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block mt-3 bg-[#1769E0] text-white px-5 py-3 rounded-xl text-sm font-bold text-center"
-            >
-              Sedekah Sekarang
+            <Link to="/program" onClick={() => setMobileMenuOpen(false)} className="btn btn-primary">
+              Mulai sedekah
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
             </Link>
-          </div>
+          </nav>
         )}
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main id="main" className="flex-1">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#0a1628] text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 bg-gradient-to-br from-[#1769E0] to-emerald-500 rounded-xl flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <span className="text-sm font-extrabold block leading-tight">SEDEKAH SUBUH</span>
-                  <span className="text-xs font-semibold text-[#1769E0] leading-tight">HARAMAIN</span>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm leading-relaxed">{settings.siteDescription}</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Navigasi</h4>
-              <div className="flex flex-col gap-2">
-                {navLinks.map(link => (
-                  <Link key={link.path} to={link.path} className="text-gray-400 text-sm hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Kontak</h4>
-              <div className="flex flex-col gap-2 text-sm text-gray-400">
-                <p>{settings.email}</p>
-                <p>{settings.whatsapp}</p>
-                <p>{settings.address}</p>
-              </div>
+      <footer className="site-footer">
+        <div className="container-shell footer-grid">
+          <div>
+            <Link to="/" className="brand">
+              <span className="brand-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/>
+                </svg>
+              </span>
+              <span className="brand-copy">
+                <span className="brand-copy-text">{settings.siteName}</span>
+                <small>Sedekah Online</small>
+              </span>
+            </Link>
+            <p className="footer-about">Platform sedekah yang menghubungkan niat baik dengan program terverifikasi dan laporan yang transparan.</p>
+          </div>
+          <div>
+            <div className="footer-title">Jelajahi</div>
+            <div className="footer-links">
+              <Link to="/program">Semua program</Link>
+              <Link to="/galeri">Galeri</Link>
             </div>
           </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-500">
-            © 2024 Sedekah Subuh Haramain. Sedekah Online Aman & Transparan.
+          <div>
+            <div className="footer-title">Informasi</div>
+            <div className="footer-links">
+              <Link to="/admin/login">Panel admin</Link>
+            </div>
           </div>
+          <div>
+            <div className="footer-title">Butuh bantuan?</div>
+            <div className="footer-links">
+              <a href={`mailto:${settings.email}`} className="support-email">{settings.email}</a>
+              <a href={`https://wa.me/${settings.whatsapp?.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="support-whatsapp">WhatsApp dukungan</a>
+            </div>
+          </div>
+        </div>
+        <div className="container-shell footer-bottom">
+          <span>© {new Date().getFullYear()} {settings.siteName}. Semua hak dilindungi.</span>
+          <span>Pembayaran aman diproses melalui layanan pembayaran</span>
         </div>
       </footer>
     </div>
