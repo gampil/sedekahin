@@ -91,12 +91,15 @@ export default function DonationPage() {
   return (
     <div className="min-h-screen bg-[#F5F7FB]">
       {/* Header */}
-      <div className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="bg-white shadow-sm sticky top-0 z-50 border-b">
         <div className="max-w-2xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link to={`/program/${program.slug}`} className="text-[#6B7280] hover:text-[#172033]">
+          <Link to={`/program/${program.slug}`} className="text-[#6B7280] hover:text-[#0a1628]">
             <ArrowLeft className="w-5 h-5" />
           </Link>
-          <h1 className="font-semibold text-[#172033] truncate">Sedekah: {program.title}</h1>
+          <div>
+            <div className="text-xs font-semibold text-[#1769E0] uppercase tracking-wider">Sedekah Subuh Baitullah</div>
+            <h1 className="font-bold text-[#0a1628] truncate text-sm">{program.title}</h1>
+          </div>
         </div>
       </div>
 
@@ -104,7 +107,7 @@ export default function DonationPage() {
         {/* Step 1: Amount */}
         {step === 1 && (
           <div>
-            <h2 className="text-lg font-bold text-[#172033] mb-4">Pilih Nominal Sedekah</h2>
+            <h2 className="text-lg font-bold text-[#0a1628] mb-4">Pilih Nominal Sedekah</h2>
             <div className="grid grid-cols-2 gap-3 mb-4">
               {activePackages.map(pkg => (
                 <button
@@ -241,7 +244,7 @@ export default function DonationPage() {
                   onChange={e => setAnonymous(e.target.checked)}
                   className="w-4 h-4 text-[#1769E0] rounded border-gray-300"
                 />
-                <label htmlFor="anonymous" className="text-sm text-[#6B7280]">Sembunyikan nama saya (Orang Baik)</label>
+                <label htmlFor="anonymous" className="text-sm text-[#6B7280]">Tampilkan sebagai Hamba Allah (sembunyikan nama)</label>
               </div>
               <div>
                 <label className="text-sm font-medium text-[#172033] mb-1.5 block">WhatsApp *</label>

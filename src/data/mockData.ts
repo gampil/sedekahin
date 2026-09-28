@@ -1,65 +1,65 @@
 import { Program, Package, Bank, Donation, Update, GalleryItem, Testimonial, Settings } from '../types';
 
 export const mockSettings: Settings = {
-  siteName: 'SedekahOnline',
-  siteDescription: 'Platform donasi dan sedekah online terpercaya untuk membantu sesama.',
+  siteName: 'Sedekah Subuh Haramain',
+  siteDescription: 'Platform sedekah tepercaya. Salurkan kebaikan untuk program yang terverifikasi di Tanah Suci.',
   logoUrl: '',
   whatsapp: '+6281234567890',
-  email: 'info@sedekahonline.id',
-  address: 'Jl. Kebaikan No. 1, Jakarta'
+  email: 'info@sedekahsubuhharamain.com',
+  address: 'Makkah Al-Mukarramah, Arab Saudi'
 };
 
 export const mockPrograms: Program[] = [
   {
     id: 'prog1',
-    title: 'Sedekah Nasi Baitullah',
-    slug: 'sedekah-nasi-baitullah',
-    thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop',
-    coverImage: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop',
-    shortDescription: 'Berbagi nasi bungkus untuk warga kurang mampu di sekitar masjid Baitullah setiap hari Jumat.',
-    content: '<h2>Tentang Program</h2><p>Program Sedekah Nasi Baitullah adalah program rutin setiap hari Jumat untuk membagikan nasi bungkus kepada warga kurang mampu di sekitar masjid Baitullah.</p><p>Setiap bungkus nasi berisi makanan bergizi yang layak konsumsi. Target kami adalah 200 bungkus setiap minggunya.</p><h3>Manfaat Sedekah</h3><ul><li>Meringankan beban saudara kita</li><li>Mendapatkan pahala berlipat ganda</li><li>Membersihkan harta</li><li>Menambah keberkahan hidup</li></ul><blockquote>"Sedekah tidaklah mengurangi harta." - HR. Muslim</blockquote>',
-    targetAmount: 50000000,
-    collectedAmount: 32750000,
-    donorCount: 245,
+    title: 'Raih Pahala Berlipat di Tanah Suci',
+    slug: 'raih-pahala-berlipat-di-tanah-suci',
+    thumbnail: 'https://drive.google.com/thumbnail?id=1Dqf0XAX2Oy_LE1SayNdABuzNaqBDUpyV&sz=w1600',
+    coverImage: 'https://drive.google.com/thumbnail?id=1Dqf0XAX2Oy_LE1SayNdABuzNaqBDUpyV&sz=w1600',
+    shortDescription: 'Raih Pahala Berlipat di Tanah Suci: 1 Kotak Nasi Sangatlah Berharga Untuk Mereka',
+    content: '<h2>Tentang Program</h2><p>Program Sedekah Subuh Baitullah adalah program rutin untuk membagikan kotak nasi kepada jamaah dan warga kurang mampu di sekitar Masjidil Haram, Makkah Al-Mukarramah.</p><p>Setiap kotak nasi berisi makanan bergizi yang layak konsumsi. 1 kotak nasi sangatlah berharga untuk mereka yang sedang beribadah di Tanah Suci.</p><h3>Keutamaan Sedekah di Tanah Suci</h3><ul><li>Pahala berlipat ganda di Tanah Haram</li><li>Meringankan beban saudara seiman</li><li>Menjadi amal jariyah yang terus mengalir</li><li>Membersihkan harta dan menambah keberkahan</li></ul><blockquote>"Sedekah tidaklah mengurangi harta." - HR. Muslim</blockquote><h3>Target Penyaluran</h3><p>Target kami adalah menyalurkan nasi kepada jamaah umrah dan warga kurang mampu di sekitar Masjidil Haram setiap harinya.</p>',
+    targetAmount: 100000000,
+    collectedAmount: 560000,
+    donorCount: 45,
     startDate: '2024-01-01',
-    endDate: '2025-12-31',
+    endDate: '2028-12-31',
     status: 'active',
     featured: true,
     createdAt: '2024-01-01T00:00:00Z'
   },
   {
     id: 'prog2',
-    title: 'Beasiswa Yatim Dhuafa',
-    slug: 'beasiswa-yatim-dhuafa',
-    thumbnail: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&h=400&fit=crop',
-    coverImage: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1200&h=600&fit=crop',
-    shortDescription: 'Program beasiswa pendidikan untuk anak yatim dan dhuafa agar bisa terus bersekolah.',
-    content: '<h2>Beasiswa Yatim Dhuafa</h2><p>Program ini bertujuan membantu anak-anak yatim dan dhuafa untuk mendapatkan pendidikan yang layak.</p><p>Dana yang terkumpul akan disalurkan untuk biaya sekolah, buku, seragam, dan kebutuhan pendidikan lainnya.</p><h3>Target Penerima</h3><p>50 anak yatim dan dhuafa di wilayah Jakarta dan sekitarnya.</p>',
+    title: 'SEDEKAH IFTAR DI TANAH SUCI',
+    slug: 'sedekah-iftar-di-tanah-suci',
+    thumbnail: 'https://drive.google.com/thumbnail?id=1R7ZPTX8dCRHKdqoqMtXwQ572dy2KkcPY&sz=w1600',
+    coverImage: 'https://drive.google.com/thumbnail?id=1R7ZPTX8dCRHKdqoqMtXwQ572dy2KkcPY&sz=w1600',
+    shortDescription: 'SATU HIDANGAN DARI ANDA, MENJADI KEBAHAGIAAN BAGI MEREKA DI WAKTU BERBUKA. Mari Berbagi Berkah di Tanah Suci.',
+    content: '<h2>Sedekah Iftar di Tanah Suci</h2><p>Satu hidangan dari Anda, menjadi kebahagiaan bagi mereka di waktu buka puasa. Mari berbagi berkah di Tanah Suci.</p><p>Program ini bertujuan menyediakan hidangan iftar untuk jamaah dan warga yang berpuasa di Makkah Al-Mukarramah.</p><h3>Keutamaan Memberi Makan Orang Berpuasa</h3><ul><li>Mendapatkan pahala seperti orang yang berpuasa</li><li>Pahala berlipat di Tanah Haram</li><li>Menjadi sebab masuk surga</li><li>Menambah keberkahan hidup</li></ul><blockquote>"Barangsiapa yang memberi makan orang yang berpuasa, maka baginya pahala seperti orang yang berpuasa tersebut." - HR. Ahmad</blockquote>',
     targetAmount: 100000000,
-    collectedAmount: 67500000,
-    donorCount: 189,
-    startDate: '2024-02-01',
-    endDate: '2025-06-30',
+    collectedAmount: 0,
+    donorCount: 0,
+    startDate: '2024-06-01',
+    endDate: '2028-06-01',
     status: 'active',
     featured: true,
-    createdAt: '2024-02-01T00:00:00Z'
+    createdAt: '2024-06-01T00:00:00Z'
   },
   {
     id: 'prog3',
-    title: 'Wakaf Al-Quran Pedesaan',
-    slug: 'wakaf-alquran-pedesaan',
-    thumbnail: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=600&h=400&fit=crop',
-    coverImage: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=1200&h=600&fit=crop',
-    shortDescription: 'Menyalurkan Al-Quran ke masjid-masjid di daerah pedesaan yang kekurangan mushaf.',
-    content: '<h2>Wakaf Al-Quran</h2><p>Banyak masjid di daerah pedesaan yang masih kekurangan Al-Quran. Program ini bertujuan untuk menyalurkan mushaf Al-Quran ke masjid-masjid tersebut.</p><p>Setiap Al-Quran yang diwakafkan akan menjadi amal jariyah bagi yang mewakafkan.</p>',
-    targetAmount: 25000000,
-    collectedAmount: 18200000,
-    donorCount: 156,
-    startDate: '2024-03-01',
-    endDate: '2025-03-01',
+    title: 'Sedekah Subuh Nasi di Baitullah, Ikhtiar Pelunasan Hutang',
+    slug: 'sedekah-subuh-nasi-di-baitullah-ikhtiar-pelunasan-hutang',
+    thumbnail: 'https://drive.google.com/thumbnail?id=1ck28L_4uRqK_cF9qCWJnAwctjTAzf4d-&sz=w1600',
+    coverImage: 'https://drive.google.com/thumbnail?id=1ck28L_4uRqK_cF9qCWJnAwctjTAzf4d-&sz=w1600',
+    shortDescription: 'Sedekah nasi di Tanah Suci sebagai bentuk amal dan ikhtiar memohon kemudahan rezeki serta pertolongan Allah dalam menyelesaikan hutang.',
+    content: '<h2>Ikhtiar Pelunasan Hutang</h2><p>Sedekah nasi di Tanah Suci sebagai bentuk amal dan ikhtiar memohon kemudahan rezeki serta pertolongan Allah dalam menyelesaikan hutang.</p><p>Program ini khusus ditujukan bagi mereka yang sedang terbelit hutang dan membutuhkan pertolongan Allah SWT.</p><h3>Keutamaan Sedekah untuk Pelunasan Hutang</h3><ul><li>Sedekah di waktu subuh memiliki keutamaan khusus</li><li>Sedekah di Tanah Haram dilipatgandakan pahalanya</li><li>Menjadi sebab dibukakan pintu rezeki</li><li>Memohon pertolongan Allah dari beban hutang</li></ul><blockquote>"Obatilah orang-orang sakit di antara kalian dengan sedekah." - HR. Abu Dawud</blockquote>',
+    targetAmount: 100000000,
+    collectedAmount: 0,
+    donorCount: 0,
+    startDate: '2024-01-01',
+    endDate: '2038-12-31',
     status: 'active',
-    featured: false,
-    createdAt: '2024-03-01T00:00:00Z'
+    featured: true,
+    createdAt: '2024-01-01T00:00:00Z'
   }
 ];
 
@@ -79,56 +79,56 @@ export const mockBanks: Bank[] = [
 export const mockDonations: Donation[] = [
   {
     id: 'don1', invoice: 'INV-20240101-001', idempotencyKey: 'key1',
-    programId: 'prog1', programTitle: 'Sedekah Nasi Baitullah',
+    programId: 'prog1', programTitle: 'Raih Pahala Berlipat di Tanah Suci',
     packageId: 'pkg3', packageName: 'Paket Besar',
     amount: 100000, salutation: 'Bapak', name: 'Ahmad Fauzi', anonymous: false,
     phone: '081234567890', email: 'ahmad@email.com',
-    prayer: 'Semoga menjadi berkah dan diterima oleh Allah SWT.',
+    prayer: 'Semoga menjadi berkah dan diterima oleh Allah SWT. Aamiin.',
     paymentMethod: 'bank', bankAccountId: 'bank1',
     status: 'paid', proofStatus: 'approved', aamiinCount: 24,
     createdAt: '2024-12-15T10:30:00Z', paidAt: '2024-12-15T11:00:00Z'
   },
   {
     id: 'don2', invoice: 'INV-20240101-002', idempotencyKey: 'key2',
-    programId: 'prog1', programTitle: 'Sedekah Nasi Baitullah',
+    programId: 'prog1', programTitle: 'Raih Pahala Berlipat di Tanah Suci',
     amount: 50000, salutation: 'Ibu', name: 'Siti Nurhaliza', anonymous: true,
-    phone: '081234567891', prayer: 'Semoga Allah membalas dengan kebaikan berlipat.',
+    phone: '081234567891', prayer: 'Semoga Allah membalas dengan kebaikan berlipat. Jazakumullah khairan.',
     paymentMethod: 'bank', bankAccountId: 'bank2',
     status: 'paid', proofStatus: 'approved', aamiinCount: 18,
     createdAt: '2024-12-14T09:00:00Z', paidAt: '2024-12-14T09:30:00Z'
   },
   {
     id: 'don3', invoice: 'INV-20240101-003', idempotencyKey: 'key3',
-    programId: 'prog2', programTitle: 'Beasiswa Yatim Dhuafa',
-    amount: 250000, salutation: 'Kak', name: 'Budi Santoso', anonymous: false,
-    phone: '081234567892', prayer: 'Untuk pendidikan anak-anak yatim.',
+    programId: 'prog3', programTitle: 'Sedekah Subuh Nasi di Baitullah, Ikhtiar Pelunasan Hutang',
+    amount: 250000, salutation: 'Bapak', name: 'Muhammad Rizki', anonymous: false,
+    phone: '081234567892', prayer: 'Ya Allah, mudahkanlah urusan hutangku. Aamiin ya Rabbal Alamin.',
     paymentMethod: 'bank', bankAccountId: 'bank1',
     status: 'paid', proofStatus: 'approved', aamiinCount: 32,
     createdAt: '2024-12-13T14:00:00Z', paidAt: '2024-12-13T14:30:00Z'
   },
   {
     id: 'don4', invoice: 'INV-20240101-004', idempotencyKey: 'key4',
-    programId: 'prog1', programTitle: 'Sedekah Nasi Baitullah',
+    programId: 'prog1', programTitle: 'Raih Pahala Berlipat di Tanah Suci',
     amount: 100000, salutation: 'Bapak', name: 'Rizky Pratama', anonymous: false,
-    phone: '081234567893', prayer: 'Semoga menjadi amal jariyah.',
+    phone: '081234567893', prayer: 'Semoga menjadi amal jariyah dan pemberat timbangan kebaikan.',
     paymentMethod: 'bank', bankAccountId: 'bank3',
     status: 'awaiting_transfer', proofStatus: 'none', aamiinCount: 0,
     createdAt: '2024-12-16T08:00:00Z'
   },
   {
     id: 'don5', invoice: 'INV-20240101-005', idempotencyKey: 'key5',
-    programId: 'prog3', programTitle: 'Wakaf Al-Quran Pedesaan',
+    programId: 'prog2', programTitle: 'SEDEKAH IFTAR DI TANAH SUCI',
     amount: 50000, salutation: 'Ibu', name: 'Dewi Lestari', anonymous: true,
-    phone: '081234567894', prayer: 'Semoga menjadi amal jariyah.',
+    phone: '081234567894', prayer: 'Semoga menjadi amal jariyah. Barakallahu fiikum.',
     paymentMethod: 'bank', bankAccountId: 'bank1',
     status: 'paid', proofStatus: 'approved', aamiinCount: 12,
     createdAt: '2024-12-12T16:00:00Z', paidAt: '2024-12-12T16:30:00Z'
   },
   {
     id: 'don6', invoice: 'INV-20240101-006', idempotencyKey: 'key6',
-    programId: 'prog2', programTitle: 'Beasiswa Yatim Dhuafa',
+    programId: 'prog1', programTitle: 'Raih Pahala Berlipat di Tanah Suci',
     amount: 100000, salutation: 'Kak', name: 'Hasan Abdullah', anonymous: false,
-    phone: '081234567895', prayer: 'Barakallahu fiikum.',
+    phone: '081234567895', prayer: 'Allahumma taqabbal minna innaka antas samiul alim.',
     paymentMethod: 'bank', bankAccountId: 'bank2',
     status: 'paid', proofStatus: 'approved', aamiinCount: 8,
     createdAt: '2024-12-11T12:00:00Z', paidAt: '2024-12-11T12:30:00Z'
@@ -138,40 +138,39 @@ export const mockDonations: Donation[] = [
 export const mockUpdates: Update[] = [
   {
     id: 'upd1', programId: 'prog1',
-    title: 'Distribusi Nasi Jumat Minggu Ini',
-    content: 'Alhamdulillah, hari ini kami telah mendistribusikan 200 bungkus nasi kepada warga di sekitar masjid Baitullah. Terima kasih kepada para donatur yang telah berpartisipasi.',
-    imageUrl: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop',
+    title: 'Penyaluran Nasi di Masjidil Haram',
+    content: 'Alhamdulillah, hari ini kami telah menyalurkan 150 kotak nasi kepada jamaah dan warga di sekitar Masjidil Haram, Makkah Al-Mukarramah. Terima kasih kepada para sahabat baik yang telah berpartisipasi.',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1Dqf0XAX2Oy_LE1SayNdABuzNaqBDUpyV&sz=w1600',
     createdAt: '2024-12-13T15:00:00Z',
     published: true
   },
   {
     id: 'upd2', programId: 'prog1',
-    title: 'Target Tercapai 65%',
-    content: 'Alhamdulillah, program Sedekah Nasi Baitullah telah mencapai 65% dari target donasi. Terima kasih atas kepercayaan Anda.',
+    title: 'Alhamdulillah, 45 Sahabat Baik Telah Berpartisipasi',
+    content: 'Alhamdulillah, program Raih Pahala Berlipat di Tanah Suci telah diikuti oleh 45 sahabat baik. Semoga Allah membalas kebaikan kalian dengan pahala yang berlipat ganda.',
     createdAt: '2024-12-10T10:00:00Z',
     published: true
   },
   {
-    id: 'upd3', programId: 'prog2',
-    title: 'Penyaluran Beasiswa Tahap 2',
-    content: 'Beasiswa tahap 2 telah disalurkan kepada 25 anak yatim dan dhuafa. Semoga bermanfaat untuk pendidikan mereka.',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop',
+    id: 'upd3', programId: 'prog3',
+    title: 'Ikhtiar Melalui Sedekah Subuh',
+    content: 'Sedekah subuh memiliki keutamaan khusus sebagai ikhtiar memohon kemudahan rezeki. Mari rutin bersedekah di waktu subuh untuk mendapatkan keberkahan.',
     createdAt: '2024-12-08T14:00:00Z',
     published: true
   }
 ];
 
 export const mockGallery: GalleryItem[] = [
-  { id: 'gal1', imageUrl: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=300&fit=crop', caption: 'Distribusi nasi bungkus', date: '2024-12-13' },
-  { id: 'gal2', imageUrl: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=300&fit=crop', caption: 'Kegiatan sosial bersama relawan', date: '2024-12-10' },
-  { id: 'gal3', imageUrl: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=300&fit=crop', caption: 'Penyerahan beasiswa', date: '2024-12-08' },
-  { id: 'gal4', imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop', caption: 'Anak-anak penerima beasiswa', date: '2024-12-05' },
-  { id: 'gal5', imageUrl: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=300&fit=crop', caption: 'Penyaluran Al-Quran', date: '2024-12-01' },
-  { id: 'gal6', imageUrl: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=300&fit=crop', caption: 'Gotong royong bersama warga', date: '2024-11-28' },
+  { id: 'gal1', imageUrl: 'https://drive.google.com/thumbnail?id=1Dqf0XAX2Oy_LE1SayNdABuzNaqBDUpyV&sz=w1600', caption: 'Penyaluran nasi di Masjidil Haram', date: '2024-12-13' },
+  { id: 'gal2', imageUrl: 'https://drive.google.com/thumbnail?id=1R7ZPTX8dCRHKdqoqMtXwQ572dy2KkcPY&sz=w1600', caption: 'Sedekah Iftar di Tanah Suci', date: '2024-12-10' },
+  { id: 'gal3', imageUrl: 'https://drive.google.com/thumbnail?id=1ck28L_4uRqK_cF9qCWJnAwctjTAzf4d-&sz=w1600', caption: 'Sedekah Subuh di Baitullah', date: '2024-12-08' },
+  { id: 'gal4', imageUrl: 'https://drive.google.com/thumbnail?id=1Dqf0XAX2Oy_LE1SayNdABuzNaqBDUpyV&sz=w1600', caption: 'Jamaah menerima paket nasi', date: '2024-12-05' },
+  { id: 'gal5', imageUrl: 'https://drive.google.com/thumbnail?id=1R7ZPTX8dCRHKdqoqMtXwQ572dy2KkcPY&sz=w1600', caption: 'Kegiatan sedekah di Makkah', date: '2024-12-01' },
+  { id: 'gal6', imageUrl: 'https://drive.google.com/thumbnail?id=1ck28L_4uRqK_cF9qCWJnAwctjTAzf4d-&sz=w1600', caption: 'Relawan Sedekah Subuh Haramain', date: '2024-11-28' },
 ];
 
 export const mockTestimonials: Testimonial[] = [
-  { id: 'test1', name: 'Hj. Fatimah', content: 'Alhamdulillah, platform ini sangat memudahkan saya untuk bersedekah. Prosesnya mudah dan transparan.', date: '2024-12-01', active: true },
-  { id: 'test2', name: 'Ustadz Rahman', content: 'Program-program yang ditawarkan sangat bermanfaat. Penyalurannya tepat sasaran.', date: '2024-11-25', active: true },
-  { id: 'test3', name: 'Ibu Aisyah', content: 'Saya rutin bersedekah melalui platform ini. Semoga menjadi amal jariyah.', date: '2024-11-20', active: true },
+  { id: 'test1', name: 'Hj. Fatimah', content: 'Alhamdulillah, platform ini sangat memudahkan saya untuk bersedekah di Tanah Suci. Prosesnya mudah, aman, dan transparan. Semoga menjadi amal jariyah.', date: '2024-12-01', active: true },
+  { id: 'test2', name: 'Ustadz Ahmad', content: 'Program sedekah subuh di Baitullah sangat berkah. Penyalurannya tepat sasaran dan laporan penyaluran selalu update. Jazakumullah khairan.', date: '2024-11-25', active: true },
+  { id: 'test3', name: 'Hamba Allah', content: 'Saya rutin bersedekah melalui platform ini setiap subuh. Alhamdulillah, rezeki semakin berkah. Semoga Allah membalas kebaikan semua sahabat baik.', date: '2024-11-20', active: true },
 ];
