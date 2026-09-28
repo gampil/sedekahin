@@ -6,11 +6,8 @@ export interface Program {
   coverImage: string;
   shortDescription: string;
   content: string;
-  targetAmount: number;
   collectedAmount: number;
   donorCount: number;
-  startDate: string;
-  endDate: string;
   status: 'active' | 'archived' | 'draft';
   featured: boolean;
   createdAt: string;
